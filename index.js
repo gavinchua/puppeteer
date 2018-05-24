@@ -1,8 +1,10 @@
 const puppeteer = require('puppeteer');
 
-puppeteer.launch().then(async browser => {
+(async () => {
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('https://aviva.com.sg');
-    // other actions...
+    await page.goto('http://banheng.com.sg/');
+    await page.screenshot({path: './img/example.png'});
+  
     await browser.close();
-});
+  })();
