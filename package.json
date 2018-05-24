@@ -1,0 +1,11 @@
+{
+  "name": "headless",
+  "version": "1.0.0",
+  "description": "headless",
+  "main": "index.js",
+  "author": "gavin",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.4.0"
+  }
+}
