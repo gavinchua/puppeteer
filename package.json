@@ -6,6 +6,7 @@
   "author": "gavin",
   "license": "MIT",
   "dependencies": {
+    "npm": "^6.1.0",
     "puppeteer": "^1.4.0"
   }
 }
