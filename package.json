@@ -6,7 +6,11 @@
   "author": "gavin",
   "license": "MIT",
   "dependencies": {
+    "faker": "^4.1.0",
     "npm": "^6.1.0",
     "puppeteer": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }
