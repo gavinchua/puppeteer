@@ -64,7 +64,7 @@ const puppeteer = require('puppeteer');
     await page.waitFor(2000);
 
     await page.evaluate(() => {
-        document.querySelector('.plan_table .bottomborder td:nth-child(3) a').click();
+        document.querySelector('.plan_table tbody tr:first-child .btn').click();
     });
 
     // await page.waitForNavigation({
