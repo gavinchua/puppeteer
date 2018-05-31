@@ -21,7 +21,10 @@ const puppeteer = require('puppeteer');
     // await page.waitForNavigation({
     //     timeout: 0
     // });
+
     console.log('Page1 loaded ...');
+
+    await page.waitFor(1000);
 
     await page.evaluate(() => {
         document.querySelector('#cover_Family').click();
@@ -43,9 +46,11 @@ const puppeteer = require('puppeteer');
 
     await page.type('#personalNric', 'S0081443A');
 
+    await page.waitFor(1000);
+
     await page.click('button[ng-click="checkTccElgible(\'mainAssured\')"]');
 
-    await page.waitFor(1000);
+    await page.waitFor(2000);
 
     await page.evaluate(() => {
         document.querySelector('button[ng-click="getPremium();"]').click();
@@ -56,7 +61,7 @@ const puppeteer = require('puppeteer');
     // });
     console.log('Page2 loaded ...');
 
-    await page.waitFor(1000);
+    await page.waitFor(2000);
 
     await page.evaluate(() => {
         document.querySelector('.plan_table .bottomborder td:nth-child(3) a').click();
