@@ -26,7 +26,7 @@ const puppeteer = require('puppeteer');
     await page.waitFor(2000);
 
     await page.evaluate(() => {
-        document.querySelector('#cover_Group').click();
+        document.querySelector('#cover_Family').click();
     });
 
     await page.evaluate(() => {
@@ -95,31 +95,45 @@ const puppeteer = require('puppeteer');
 
     await page.type('input[name="email"]', 'gavin_chua@aviva-asia.com');
 
-    await page.waitFor(2000);
-
     await page.type('input[name="postalCode"]', '179942');
 
-    await page.waitFor(5000);
+    await page.waitFor(2000);
 
     await page.click('a[ng-click="$event.preventDefault();getAddress(mainAssured.addresses[0])"]');
 
-    await page.type('#nric_travellers_0', 'S5190290D');
+    await page.type('#nric_companion_0', 'S5190290D');
 
-    await page.type('details-basic-personal[type="\'travellers\'"] input[name="familyName0"]', 'Lim');
+    await page.type('details-basic-personal[type="\'companion\'"] input[name="familyName0"]', 'Lim');
 
-    await page.type('details-basic-personal[type="\'travellers\'"] input[name="givenName0"]', 'Sharon');
+    await page.type('details-basic-personal[type="\'companion\'"] input[name="givenName0"]', 'Sharon');
 
-    await page.type('details-basic-personal[type="\'travellers\'"] input[ng-model="who.birth.date"]', '2');
+    await page.type('details-basic-personal[type="\'companion\'"] input[ng-model="who.birth.date"]', '2');
 
-    await page.type('details-basic-personal[type="\'travellers\'"] input[ng-model="who.birth.month"]', '8');
+    await page.type('details-basic-personal[type="\'companion\'"] input[ng-model="who.birth.month"]', '8');
 
-    await page.type('details-basic-personal[type="\'travellers\'"] input[ng-model="who.birth.year"]', '1986');
+    await page.type('details-basic-personal[type="\'companion\'"] input[ng-model="who.birth.year"]', '1986');
 
     await page.evaluate(() => {
-        document.querySelector('details-basic-personal[type="\'travellers\'"] .a-radio__input[value="F"]').click();
+        document.querySelector('details-basic-personal[type="\'companion\'"] .a-radio__input[value="F"]').click();
     });
 
-    await page.waitFor(5000);
+    await page.type('#nric_children_0', 'T8855555J');
+
+    await page.type('details-basic-personal[type="\'children\'"] input[name="familyName0"]', 'Tan');
+
+    await page.type('details-basic-personal[type="\'children\'"] input[name="givenName0"]', 'Richard');
+
+    await page.type('details-basic-personal[type="\'children\'"] input[ng-model="who.birth.date"]', '3');
+
+    await page.type('details-basic-personal[type="\'children\'"] input[ng-model="who.birth.month"]', '9');
+
+    await page.type('details-basic-personal[type="\'children\'"] input[ng-model="who.birth.year"]', '2016');
+
+    await page.evaluate(() => {
+        document.querySelector('details-basic-personal[type="\'children\'"] .a-radio__input[value="M"]').click();
+    });
+
+    await page.waitFor(2000);
 
     await page.evaluate(() => {
         document.querySelector('.btn').click();
