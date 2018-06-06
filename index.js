@@ -8,20 +8,19 @@ const puppeteer = require('puppeteer');
         timeout: 0,
         //slowMo: 100 // slow down by 100ms
     });
-    
+
     const page = await browser.newPage();
 
     try {
         // Open page.
         await page.goto('https://uat.login.aviva.com.sg/gi/travel/#/getQuote');
         //await page.goto('http://localhost:3001/#/getQuote');
-    }
-    catch (error) {
+    } catch (error) {
         console.log(error);
         browser.close();
     }
 
-    console.log('Page 1 loaded ...');
+    console.log('Page 1 loading ...');
 
     await page.waitFor(2000);
 
@@ -55,7 +54,7 @@ const puppeteer = require('puppeteer');
         document.querySelector('button[ng-click="getPremium();"]').click();
     });
 
-    console.log('Page 2 loaded ...');
+    console.log('Page 2 loading ...');
 
     await page.waitFor(2000);
 
@@ -63,7 +62,7 @@ const puppeteer = require('puppeteer');
         document.querySelector('.plan_table tbody tr:first-child .btn').click();
     });
 
-    console.log('Page 3 loaded ...');
+    console.log('Page 3 loading ...');
 
     await page.waitFor(2000);
 
@@ -71,7 +70,7 @@ const puppeteer = require('puppeteer');
         document.querySelector('.btn').click();
     });
 
-    console.log('Page 4 loaded ...');
+    console.log('Page 4 loading ...');
 
     await page.waitFor(2000);
 
@@ -103,6 +102,8 @@ const puppeteer = require('puppeteer');
 
     await page.click('a[ng-click="$event.preventDefault();getAddress(mainAssured.addresses[0])"]');
 
+    console.log('Get Address button click ...');
+
     await page.type('#nric_travellers_0', 'S5190290D');
 
     await page.type('details-basic-personal[type="\'travellers\'"] input[name="familyName0"]', 'Lim');
@@ -119,13 +120,15 @@ const puppeteer = require('puppeteer');
         document.querySelector('details-basic-personal[type="\'travellers\'"] .a-radio__input[value="F"]').click();
     });
 
-    await page.waitFor(5000);
+    await page.waitFor(8000);
 
     await page.evaluate(() => {
         document.querySelector('.btn').click();
     });
 
-    console.log('Page 5 loaded ...');
+    console.log('Last button click ...');
+
+    console.log('Page 5 loading ...');
 
     await page.waitFor(2000);
 })();
